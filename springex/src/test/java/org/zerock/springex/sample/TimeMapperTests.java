@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.zerock.springex.mapper.TimeMapper;
+import org.zerock.springex.mapper.TimeMapper2;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -14,10 +15,16 @@ import org.zerock.springex.mapper.TimeMapper;
 public class TimeMapperTests {
   @Autowired(required = false)
   private TimeMapper mapper;
+  @Autowired(required = false)
+  private TimeMapper2 timeMapper2;
 
   @Test
   public void testGetTime() {
     log.info(mapper.getTime());
+  }
+  @Test
+  public void testNow() {
+    log.info("testNow() : "+timeMapper2.getNow());
   }
 }
 
