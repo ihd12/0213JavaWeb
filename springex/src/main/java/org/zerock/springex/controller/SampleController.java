@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.springex.dto.TodoDTO;
 
 import java.time.LocalDate;
 
@@ -39,5 +41,34 @@ public class SampleController {
   public void ex4(Model model){
     log.info("ex4...");
     model.addAttribute("message", "Hello World");
+  }
+  @GetMapping("/ex4_1")
+  public void ex4Extra(Model model){
+    log.info("ex4Extra...");
+    TodoDTO todoDTO = TodoDTO.builder()
+        .tno(20L)
+        .title("Test title")
+        .dueDate(LocalDate.parse("2020-02-10"))
+        .finished(true)
+        .writer("Test writer")
+        .build();
+    model.addAttribute("todoDTO", todoDTO);
+  }
+  @GetMapping("/ex5")
+  public String ex5(RedirectAttributes redirectAttributes){
+    log.info("ex5...");
+    redirectAttributes.addAttribute("name","ABC");
+    redirectAttributes.addFlashAttribute("result","success");
+    return "ex6";
+  }
+  @GetMapping("/ex6")
+  public void ex6(String name, Model model){
+    log.info("ex6... : " + name);
+    model.addAttribute("name", name);
+  }
+  @GetMapping("/ex7")
+  public void ex7(int p1, int p2){
+    log.info("p1... : " + p1);
+    log.info("p2... : " + p2);
   }
 }
