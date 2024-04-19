@@ -13,6 +13,7 @@
 <!--    <bean class="org.zerock.springex.sample.SampleService"></bean>-->
     <context:component-scan base-package="org.zerock.springex.sample" />
     <context:component-scan base-package="org.zerock.springex.config" />
+    <context:component-scan base-package="org.zerock.springex.service" />
     <bean id = "hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
         <property name="jdbcUrl" value="jdbc:mariadb://localhost:3307/webdb"></property>
@@ -33,7 +34,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:/mappers/**/*.xml"></property>
     </bean>
-    <mybatis:scan base-package="org.zerock.springex.mapper"></mybatis:scan>
+    <mybatis:scan base-package="org.zerock.springex.mapper" />
 </beans>
 
 

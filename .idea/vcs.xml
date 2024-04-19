@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/시험/제출/2024-04-17_애플리케이션 테스트 수행_손동진/applicationtest_SDJ" vcs="Git" />
   </component>
 </project>

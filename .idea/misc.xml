@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../javaworkspace/jdbcex" />
     <file type="web" url="file://$PROJECT_DIR$/../javaworkspace/w1" />
+    <file type="web" url="file://$PROJECT_DIR$/applicationtest" />
     <file type="web" url="file://$PROJECT_DIR$/jdbcex" />
     <file type="web" url="file://$PROJECT_DIR$/springex" />
     <file type="web" url="file://$PROJECT_DIR$/w1" />
