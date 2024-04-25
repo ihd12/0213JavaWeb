@@ -21,7 +21,7 @@ public class BoardRepositoryTests {
   private BoardRepository boardRepository;
   @Test
   public void testInsert(){
-    IntStream.range(1,100).forEach(i->{
+    IntStream.rangeClosed(1,100).forEach(i->{
         Board board = Board.builder()
             .title("title..."+i)
             .content("content..."+i)
