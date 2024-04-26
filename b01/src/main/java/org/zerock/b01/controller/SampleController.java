@@ -3,9 +3,12 @@ package org.zerock.b01.controller;
 import lombok.Data;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.zerock.b01.dto.PageRequestDTO;
+import org.zerock.b01.service.NoticeService;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,6 +20,9 @@ import java.util.stream.IntStream;
 @Controller
 @Log4j2
 public class SampleController {
+  @Autowired
+  private NoticeService noticeService;
+
   @GetMapping("/hello")
   public void hello(Model model) {
     log.info("hello......................");
@@ -78,7 +84,8 @@ public class SampleController {
   public void mypage(Model model) {
   }
   @GetMapping("/ex/notice_list")
-  public void notice_list(Model model) {
+  public void notice_list(PageRequestDTO pageRequestDTO, Model model) {
+    model.addAttribute("noticeList", noticeService.list(pageRequestDTO)) ;
   }
   @GetMapping("/ex/notice_add")
   public void notice_add(Model model) {

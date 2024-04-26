@@ -20,3 +20,18 @@ public class NoticeDTO {
   private LocalDateTime regDate;
   private LocalDateTime modDate;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

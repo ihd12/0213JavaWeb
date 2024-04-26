@@ -63,7 +63,7 @@ public class BoardServiceImpl implements BoardService {
     //레포지토리를 실행하여 데이터 취득
     Page<Board> result = boardRepository.searchAll(types,keyword,pageable);
     // VO를 DTO로 변환
-    List<BoardDTO> dtoList = result.getContent().stream()
+     List<BoardDTO>dtoList = result.getContent().stream()
         .map(board -> modelMapper.map(board, BoardDTO.class))
         .collect(Collectors.toList());
 
