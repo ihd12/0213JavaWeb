@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.b01.dto.NoticeDTO;
@@ -90,7 +89,7 @@ public class SampleController {
   }
   @GetMapping("/ex/notice_list")
   public void notice_list(PageRequestDTO pageRequestDTO, Model model) {
-    model.addAttribute("noticeList", noticeService.list(pageRequestDTO)) ;
+    model.addAttribute("responseDTO", noticeService.list(pageRequestDTO)) ;
   }
   @GetMapping("/ex/notice_add")
   public void notice_addGet(Model model) {

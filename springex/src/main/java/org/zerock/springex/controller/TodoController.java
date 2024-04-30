@@ -1,5 +1,6 @@
 package org.zerock.springex.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.springex.dto.PageRequestDTO;
 import org.zerock.springex.dto.TodoDTO;
@@ -104,10 +106,11 @@ public class TodoController {
   }
   //@RequestMapping(value = "/register", method= RequestMethod.POST)
   @PostMapping("/register")
-  public String registerPost(@Valid TodoDTO todoDTO,
+  public String registerPost(MultipartFile file, @Valid TodoDTO todoDTO,
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes){
     log.info("POST todo register.......");
+    file.transferTo("C:\\images");
     if(bindingResult.hasErrors()){
       log.info("has errors.......");
       redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
