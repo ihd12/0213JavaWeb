@@ -62,7 +62,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Image</span>
-                                <input type="file" name="image" class="form-control">
+                                <input type="file" name="file" class="form-control">
                             </div>
                             <div class="my-4">
                                 <div class="float-end">

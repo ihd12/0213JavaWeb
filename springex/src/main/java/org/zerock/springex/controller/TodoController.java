@@ -16,6 +16,8 @@ import org.zerock.springex.dto.TodoDTO;
 import org.zerock.springex.service.TodoService;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 
 // 깃 커밋 테스트 , 주석입니다.
 
@@ -105,12 +107,14 @@ public class TodoController {
     log.info("todo register.......");
   }
   //@RequestMapping(value = "/register", method= RequestMethod.POST)
+
   @PostMapping("/register")
-  public String registerPost(MultipartFile file, @Valid TodoDTO todoDTO,
+  public String registerPost( @Valid TodoDTO todoDTO,
+                              MultipartFile file,
                              BindingResult bindingResult,
-                             RedirectAttributes redirectAttributes){
+                             RedirectAttributes redirectAttributes) throws IOException {
     log.info("POST todo register.......");
-    file.transferTo("C:\\images");
+    file.transferTo(new File("c://files//" + file.getOriginalFilename()));
     if(bindingResult.hasErrors()){
       log.info("has errors.......");
       redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
@@ -119,5 +123,14 @@ public class TodoController {
     log.info(todoDTO);
     todoService.register(todoDTO);
     return "redirect:/todo/list";
+  }
+  @GetMapping("/file")
+  public void getFile(){
+
+  }
+  @PostMapping("/file")
+  public String addFile(MultipartFile file) throws IOException {
+    file.transferTo(new File("c://files//" + file.getOriginalFilename()));
+    return "redirect:/todo/file";
   }
 }

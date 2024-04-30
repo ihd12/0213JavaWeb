@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/dto/PageResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/dto/PageResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/NoticeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/NoticeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/NoticeSearchImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/NoticeSearchImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/domain/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/dto/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../b01/스프링 기능 작성 순서.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/file.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/join.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/notice_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/notice_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/notice_modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/notice_modify.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/springex/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/springex/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +49,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -58,6 +71,13 @@
     "accountId": "fc6e44f2-8fda-4c28-84df-b9b3b2210778"
   }
 }]]></component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -68,7 +88,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.springex 빌드.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat 서버.Tomcat 9.0.87.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/ihd/webworkspace/springex",
@@ -80,6 +102,97 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.87" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.87" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.zerock : springex-1.0-SNAPSHOT.war (exploded)">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="fcf082c0-31c4-4da3-9962-b7e0971e98c2" />
+        <option name="HTTP_PORT" value="8081" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61309" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.zerock : springex-1.0-SNAPSHOT.war (exploded)" />
+        </option>
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -97,7 +210,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712905703339</updated>
       <workItem from="1712905704489" duration="30000" />
-      <workItem from="1714452300579" duration="2105000" />
+      <workItem from="1714452300579" duration="5124000" />
     </task>
     <servers />
   </component>
