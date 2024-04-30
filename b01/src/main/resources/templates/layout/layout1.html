@@ -7,10 +7,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" th:href="@{/css/common.css}">
-
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
-
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="/js/common.js"></script>
     <script src="/js/jquery.smooth-scroll.min.js"></script>
@@ -18,6 +14,7 @@
     <script src="/js/html5shiv.js"></script>
     <script src="/js/placeholders.min.js"></script>
     <![endif]-->
+    <th:block layout:fragment="head"></th:block>
 </head>
 
 <body>
@@ -118,8 +115,7 @@
     <th:block layout:fragment="script">
 
     </th:block>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Core theme JS-->
     <script th:src="@{/js/scripts.js}"></script>
 </body>
