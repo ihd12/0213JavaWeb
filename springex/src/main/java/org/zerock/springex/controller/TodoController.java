@@ -109,12 +109,20 @@ public class TodoController {
   //@RequestMapping(value = "/register", method= RequestMethod.POST)
 
   @PostMapping("/register")
-  public String registerPost( @Valid TodoDTO todoDTO,
-                              MultipartFile file,
+  public String registerPost(MultipartFile file,
+                          @Valid TodoDTO todoDTO,
                              BindingResult bindingResult,
                              RedirectAttributes redirectAttributes) throws IOException {
     log.info("POST todo register.......");
+    //실제 파일 이름 출력
+    log.info(file.getOriginalFilename());
+    //파일의 크기
+    log.info(file.getSize());
+    //파일의 확장자
+    log.info(file.getContentType());
+    //파일을 저장하는 메서드 : new File("파일을 저장할 경로//파일이름.확장자")
     file.transferTo(new File("c://files//" + file.getOriginalFilename()));
+    
     if(bindingResult.hasErrors()){
       log.info("has errors.......");
       redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());

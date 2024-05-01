@@ -31,7 +31,8 @@
             <!-- header_cont -->
             <div class="header_cont">
                 <ul class="util clear">
-                    <li><a href="/member/login">로그인</a></li>
+                    <li th:if="${session.loginInfo == null}"><a href="/member/login">로그인</a></li>
+                    <li th:if="${session.loginInfo != null}"><a href="/member/logout">로그아웃</a></li>
                     <li><a href="/member/join">회원가입</a></li>
                 </ul>
                 <nav>
@@ -56,7 +57,7 @@
                         <li><a href="javascript:;" class="openAll3">상품투어</a>
                             <div class="gnb_depth gnb_depth2_3">
                                 <ul class="submenu_list">
-                                    <li><a href="/ex/program">프로그램 소개</a></li>
+                                    <li><a href="/program/list">프로그램 소개</a></li>
                                     <li><a href="javascript:;">여행자료</a></li>
                                 </ul>
                             </div>
@@ -113,7 +114,12 @@
         <p class="to_top"><a href="#layout0" class="s_point">TOP</a></p>
     </div>
     <th:block layout:fragment="script">
-
+    <script>
+        var a = [[${loginInfo}]]
+        console.log(a);
+        var b = [[${info}]]
+        console.log(b);
+    </script>
     </th:block>
 
     <!-- Core theme JS-->

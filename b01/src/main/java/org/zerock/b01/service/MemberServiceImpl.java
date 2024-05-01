@@ -9,6 +9,8 @@ import org.zerock.b01.domain.Member;
 import org.zerock.b01.dto.MemberDTO;
 import org.zerock.b01.repository.MemberRepository;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Log4j2
@@ -23,9 +25,11 @@ public class MemberServiceImpl implements MemberService {
   }
 
   @Override
-  public MemberDTO login(String memberId, String memberPw) {
-    Member member = memberRepository.findByIdAndPw(memberId, memberPw);
-    return modelMapper.map(member,MemberDTO.class);
+  public MemberDTO login(String member_id, String member_pw) {
+    Optional<Member> result = memberRepository.findByIdAndPw(member_id, member_pw);
+    Member member = result.orElseThrow();
+    MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
+    return memberDTO;
   }
 }
 

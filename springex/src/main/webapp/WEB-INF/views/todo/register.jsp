@@ -62,8 +62,9 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Image</span>
-                                <input type="file" name="file" class="form-control">
+                                <input type="file" name="file" class="form-control" placeholder="Writer">
                             </div>
+
                             <div class="my-4">
                                 <div class="float-end">
                                     <button type="submit" class="btn btn-primary">Submit</button>

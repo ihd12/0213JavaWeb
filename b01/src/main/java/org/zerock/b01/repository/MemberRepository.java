@@ -4,7 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.zerock.b01.domain.Member;
 
+import java.util.Optional;
+
 public interface MemberRepository  extends JpaRepository<Member,String> {
-  @Query(value = "SELECT member_id, name, phone, email1, email2, gender, agree, moddate, regdate FROM member WHERE member_id = ? AND member_pw = ?", nativeQuery = true)
-  Member findByIdAndPw(String id, String pw);
+  @Query(value = "SELECT member_id,member_pw, name, phone, email1, email2, gender, agree, moddate, regdate FROM member WHERE member_id = ?1 AND member_pw = ?2", nativeQuery = true)
+  Optional<Member> findByIdAndPw(String id, String pw);
 }
