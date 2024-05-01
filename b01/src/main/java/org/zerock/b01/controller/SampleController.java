@@ -78,15 +78,7 @@ public class SampleController {
   @GetMapping("/ex/index")
   public void index(Model model) {
   }
-  @GetMapping("/ex/join")
-  public void join(Model model) {
-  }
-  @GetMapping("/ex/login")
-  public void login(Model model) {
-  }
-  @GetMapping("/ex/mypage")
-  public void mypage(Model model) {
-  }
+
   @GetMapping("/ex/notice_list")
   public void notice_list(PageRequestDTO pageRequestDTO, Model model) {
     model.addAttribute("responseDTO", noticeService.list(pageRequestDTO)) ;

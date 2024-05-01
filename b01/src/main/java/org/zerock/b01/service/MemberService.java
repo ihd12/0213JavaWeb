@@ -4,5 +4,5 @@ import org.zerock.b01.dto.MemberDTO;
 
 public interface MemberService {
   void register(MemberDTO memberDTO);
-  MemberDTO readOne(String memberId);
+  MemberDTO login(String memberId, String memberPw);
 }

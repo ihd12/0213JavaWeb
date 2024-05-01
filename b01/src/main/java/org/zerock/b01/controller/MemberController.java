@@ -1,5 +1,7 @@
 package org.zerock.b01.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,32 @@ public class MemberController {
   }
   @PostMapping("/join")
   public String addJoin(MemberDTO memberDTO) {
+    memberDTO.setEmail1(memberDTO.getMember_id());
     memberService.register(memberDTO);
-    return "redirect:/member/join";
+    return "redirect:/ex/index";
+  }
+
+  @PostMapping("/login")
+  public String login(HttpServletRequest req, String id, String password) {
+    MemberDTO loginInfo = memberService.login(id,password);
+    HttpSession session = req.getSession();
+    session.setAttribute("loginInfo", loginInfo);
+    return "redirect:/ex/index";
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
