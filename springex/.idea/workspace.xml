@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/ProgramController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/domain/Program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/dto/ProgramDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/ProgramRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/ProgramService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/ProgramServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../b01/src/main/resources/static/csv/program.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/java/org/zerock/b01/service/MemberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/program.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/ex/program.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../b01/src/main/resources/templates/layout/layout1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../b01/src/main/resources/templates/layout/layout1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/zerock/springex/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/zerock/springex/controller/TodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/register.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +195,7 @@
       <workItem from="1712905704489" duration="30000" />
       <workItem from="1714452300579" duration="7195000" />
       <workItem from="1714521223807" duration="28000" />
-      <workItem from="1714545272815" duration="4027000" />
+      <workItem from="1714545272815" duration="4166000" />
     </task>
     <servers />
   </component>

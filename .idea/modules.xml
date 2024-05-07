@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springex.iml" filepath="$PROJECT_DIR$/.idea/modules/springex.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springex.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springex.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springex.test.iml" filepath="$PROJECT_DIR$/.idea/modules/springex.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/webworkspace.iml" filepath="$PROJECT_DIR$/.idea/webworkspace.iml" />
