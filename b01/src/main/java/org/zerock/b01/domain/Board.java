@@ -3,12 +3,15 @@ package org.zerock.b01.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(exclude = "imageSet")
 public class Board extends BaseEntity{
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +25,9 @@ public class Board extends BaseEntity{
 
   // 양방향을 한다면,
 
+  @OneToMany
+  @Builder.Default
+  private Set<BoardImage> imageSet = new HashSet<>();
 
   public void change(String title, String content){
     this.title = title;
