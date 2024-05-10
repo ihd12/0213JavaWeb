@@ -18,8 +18,10 @@ public class BoardImage implements Comparable<BoardImage> {
   private String fileName;
 
   private int ord;
+
   @ManyToOne
   private Board board;
+
   @Override
   public int compareTo(BoardImage other) {
     return this.ord - other.ord;
@@ -28,3 +30,12 @@ public class BoardImage implements Comparable<BoardImage> {
     this.board = board;
   }
 }
+
+
+
+
+
+
+
+
+

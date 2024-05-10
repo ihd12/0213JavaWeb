@@ -8,11 +8,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.zerock.b01.domain.Board;
-import org.zerock.b01.dto.BoardDTO;
-import org.zerock.b01.dto.BoardListReplyCountDTO;
-import org.zerock.b01.dto.PageRequestDTO;
-import org.zerock.b01.dto.PageResponseDTO;
+import org.zerock.b01.dto.*;
 import org.zerock.b01.repository.BoardRepository;
+import org.zerock.b01.repository.ReplyRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,10 +23,12 @@ import java.util.stream.Collectors;
 public class BoardServiceImpl implements BoardService {
   private final ModelMapper modelMapper;
   private final BoardRepository boardRepository;
+  private final ReplyRepository replyRepository;
 
   @Override
   public Long register(BoardDTO boardDTO) {
-    Board board = modelMapper.map(boardDTO, Board.class);
+//    Board board = modelMapper.map(boardDTO, Board.class);
+    Board board = dtoToEntity(boardDTO);
     Long bno = boardRepository.save(board).getBno();
     return bno;
   }
@@ -37,7 +37,8 @@ public class BoardServiceImpl implements BoardService {
   public BoardDTO readOne(Long bno) {
     Optional<Board> result = boardRepository.findById(bno);
     Board board = result.orElseThrow();
-    BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+//    BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+    BoardDTO boardDTO = entityToDto(board);
     return boardDTO;
   }
 
@@ -46,11 +47,22 @@ public class BoardServiceImpl implements BoardService {
     Optional<Board> result = boardRepository.findById(boardDTO.getBno());
     Board board = result.orElseThrow();
     board.change(boardDTO.getTitle(), boardDTO.getContent());
+
+    //이미지 파일 삭제
+    board.clearImages();
+    //UUID와 파일이름 저장 로직
+    if(boardDTO.getFileNames() != null){
+      for(String fileName : boardDTO.getFileNames()){
+        String[] arr = fileName.split("_");
+        board.addImage(arr[0],arr[1]);
+      }
+    }
     boardRepository.save(board);
   }
 
   @Override
   public void remove(Long bno) {
+    replyRepository.deleteByBoard_Bno(bno);
     boardRepository.deleteById(bno);
   }
 
@@ -91,6 +103,22 @@ public class BoardServiceImpl implements BoardService {
     // 우리는 자동으로 Projections 이용해서, 미리 자동으로 타입을 변환 하게 설정 해둠.
 
     return PageResponseDTO.<BoardListReplyCountDTO>withAll()
+        .pageRequestDTO(pageRequestDTO)
+        .dtoList(result.getContent())
+        .total((int)result.getTotalElements())
+        .build();
+  }
+
+  @Override
+  public PageResponseDTO<BoardListAllDTO> listWithAll(PageRequestDTO pageRequestDTO) {
+    //페이지 및 검색 조건 취득
+    String[] types = pageRequestDTO.getTypes();
+    String keyword = pageRequestDTO.getKeyword();
+    Pageable pageable = pageRequestDTO.getPageable("bno");
+    //레포지토리를 실행하여 데이터 취득
+    Page<BoardListAllDTO> result = boardRepository.searchWithAll(types,keyword,pageable);
+
+    return PageResponseDTO.<BoardListAllDTO>withAll()
         .pageRequestDTO(pageRequestDTO)
         .dtoList(result.getContent())
         .total((int)result.getTotalElements())
