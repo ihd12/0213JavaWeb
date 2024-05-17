@@ -32,6 +32,9 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     //스프링 시큐리티
     implementation 'org.springframework.boot:spring-boot-starter-security:3.2.5'
+    // 스프링 인증
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:3.2.5'
+
     //
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.1.2.RELEASE'

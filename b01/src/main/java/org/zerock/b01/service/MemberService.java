@@ -5,4 +5,5 @@ import org.zerock.b01.dto.MemberJoinDTO;
 public interface MemberService {
   static class MidExistException extends Exception {}
   void join(MemberJoinDTO member) throws MidExistException;
+  void modify(String mpw, String mid);
 }

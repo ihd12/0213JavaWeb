@@ -40,4 +40,9 @@ public class MemberServiceImpl implements MemberService {
     //데이터베이스에 저장
     memberRepository.save(member);
   }
+
+  @Override
+  public void modify(String mpw, String mid) {
+    memberRepository.updatePassword(passwordEncoder.encode(mpw),mid);
+  }
 }
