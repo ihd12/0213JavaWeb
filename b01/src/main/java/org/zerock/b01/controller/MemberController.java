@@ -4,13 +4,19 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.b01.dto.MemberJoinDTO;
+import org.zerock.b01.service.MemberService;
 
 @Controller
 @RequestMapping("/member")
 @Log4j2
 @RequiredArgsConstructor
 public class MemberController {
+  private final MemberService memberService;
+
   @GetMapping("/login")
   public void loginGET(String error, String logout){
     log.info("login get...............");
@@ -18,6 +24,26 @@ public class MemberController {
     if(logout != null){
       log.info("user logout...........");
     }
+  }
+  @GetMapping("/join")
+  public void joinGET(){
+    log.info("join get...............");
+  }
+  @PostMapping("/join")
+  public String joinPOST(MemberJoinDTO memberJoinDTO, RedirectAttributes redirectAttributes){
+    log.info("join post...............");
+    log.info(memberJoinDTO);
+    try{
+      //회원가입 서비스 실행
+      memberService.join(memberJoinDTO);
+      //아이디가 존재 할 경우 에러 발생
+    }catch(MemberService.MidExistException e){
+      //에러 발생시 리다이렉트 페이지에 error=mid 값을 가지고 이동
+      redirectAttributes.addFlashAttribute("error","mid");
+      return "redirect:/member/join";
+    }
+    redirectAttributes.addFlashAttribute("result","success");
+    return "redirect:/board/list";
   }
 }
 
