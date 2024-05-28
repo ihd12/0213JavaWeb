@@ -27,7 +27,7 @@ public class JWTUtil {
     //payload 부분설정
     Map<String,Object> payloads = new HashMap<>();
     payloads.putAll(valueMap);
-    //테스트 시어는 짧은 유효기간 설정
+    //테스트시에는 짧은 유효기간 설정
     int time = (60*24) * days;
     String jwtStr = Jwts.builder()
         .setHeader(headers)
