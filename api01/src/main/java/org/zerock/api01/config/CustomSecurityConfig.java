@@ -16,12 +16,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.zerock.api01.security.APIUserDetailsService;
 import org.zerock.api01.security.filter.APILoginFilter;
 import org.zerock.api01.security.filter.RefreshTokenFilter;
 import org.zerock.api01.security.filter.TokenCheckFilter;
 import org.zerock.api01.security.handler.APILoginSuccessHandler;
 import org.zerock.api01.util.JWTUtil;
+
+import java.util.Arrays;
 
 @Configuration
 @Log4j2
@@ -73,7 +78,7 @@ public class CustomSecurityConfig {
     http.addFilterBefore(apiLoginFilter, UsernamePasswordAuthenticationFilter.class);
 
     http.addFilterBefore(
-        tokenCheckFilter(jwtUtil),
+        tokenCheckFilter(jwtUtil, apiUserDetailsService),
         UsernamePasswordAuthenticationFilter.class
     );
     //TokenCheckFilter실행되기 전 RefreshTokenFilter가 실행됨
@@ -83,10 +88,34 @@ public class CustomSecurityConfig {
     http.csrf().disable();
     // 세션 생생 설정 끄기
     http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+    //CORS 설정
+    http.cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource()));
+
     return http.build();
   }
-  private TokenCheckFilter tokenCheckFilter(JWTUtil jwtUtil){
-    return new TokenCheckFilter(jwtUtil);
+  private TokenCheckFilter tokenCheckFilter(JWTUtil jwtUtil, APIUserDetailsService apiUserDetailsService){
+    return new TokenCheckFilter(apiUserDetailsService,jwtUtil);
+  }
+
+  @Bean
+  public CorsConfigurationSource corsConfigurationSource(){
+    CorsConfiguration configuration = new CorsConfiguration();
+    // 모든 패턴을 허락
+    // origin의 의미 : protocol+host+port
+    // protocol : http://, https://
+    // host : 도메인(localhost, www.naver.com, www.google.com)이나 ip주소
+    // port : :80, :8080, :3306
+    configuration.setAllowedOriginPatterns(Arrays.asList("*"));
+    // Ajax에서 실행할 메서드 설정
+    configuration.setAllowedMethods(Arrays.asList("HEAD","GET","POST","PUT","DELETE"));
+    // 사용할 헤더 설정
+    configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control","Content-Type"));
+    //cors설정을 사용 설정
+    configuration.setAllowCredentials(true);
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/**",configuration);
+    return source;
   }
 }
 
