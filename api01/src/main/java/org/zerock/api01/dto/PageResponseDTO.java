@@ -26,6 +26,7 @@ public class PageResponseDTO<E> {
     if(total <= 0){
       return;
     }
+    this.pageRequestDTO = pageRequestDTO;
     this.page = pageRequestDTO.getPage();
     this.size = pageRequestDTO.getSize();
     this.total = total;

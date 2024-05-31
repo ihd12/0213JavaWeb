@@ -70,30 +70,18 @@
                         <div class="my-4">
                             <div class="float-end">
                                 <button class="btn btn-primary btn1">확인</button>
-                                <button type="button" class="btn btn-primary">Modify</button>
+                                <button type="button" class="btn btn-primary modifyBtn">Modify</button>
                                 <button type="button" class="btn btn-secondary">List</button>
                             </div>
                         </div>
-                        <script>
-                            // document.querySelector(".btn-primary").addEventListener("click", function(e){
-                            //     self.location = "/todo/modify?tno="+${dto.tno} + "&${pageRequestDTO.link}"
-                            // }, false)
-                            // document.querySelector(".btn-secondary").addEventListener("click", function(e){
-                            //     e.preventDefault()
-                            //     e.stopPropagation()
-                            //     self.location = "/todo/list?${pageRequestDTO.link}"
-                            // }, false)
-                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
       
     </form>
     <div class="row footer">
-        <!-- <%--        <h1>Footer</h1> -->
         <div class="row fixed-bottom" style="z-index:-100">
             <footer class="py-1 my-1">
                 <p class="text-center text-muted">Footer</p>
@@ -105,11 +93,12 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="connect.js"></script>
 <script>
-    window.addEventListener("load",function(){
-        let tno = location.search.substr(1)
-        let url = "http://localhost:8080/api/todo/"+tno
-        pageStart(url)
-    })
+window.addEventListener("load",function(){
+    // url의 ? 부터 내용을 취득
+    let tno = location.search.substr(1)
+    let url = "http://localhost:8080/api/todo/"+tno
+    pageStart(url)
+})
 const resultDiv = document.querySelector(".result");
 document.querySelector(".btn1").addEventListener("click",(e) =>{
     e.preventDefault()
@@ -131,6 +120,18 @@ function pageStart(url){
         alert(error)
     })
 }
+document.querySelector(".modifyBtn").addEventListener("click",function(e){
+    e.stopPropagation()
+    e.preventDefault()
+    let tno = document.getElementById("tno").value
+    location.href = "/modify.html?"+tno
+},false)
+document.querySelector(".btn-secondary").addEventListener("click",function(e){
+    e.stopPropagation()
+    e.preventDefault()
+    location.href = "/list.html"
+},false)
+
 </script>
 </body>
 </html>

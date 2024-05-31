@@ -45,6 +45,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Search</h5>
                         <form name="searchForm" method="get">
+                            <input type="hidden" name="page" value="1">
                             <input type="hidden" name="size" value="10">
                             <div class="mb-3">
                                 <input type="checkbox" name="finished" >완료여부
@@ -88,16 +89,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <!-- <c:forEach items="${responseDTO.dtoList}" var="dto">
-                                <tr>
-                                    <th scope="row"><c:out value="${dto.tno}"/></th>
-                                    <td><a href="/todo/read?tno=${dto.tno}&${pageRequestDTO.link}" class="text-decoration-none"><c:out
-                                            value="${dto.title}"/></a></td>
-                                    <td><c:out value="${dto.writer}"/></td>
-                                    <td><c:out value="${dto.dueDate}"/></td>
-                                    <td><c:out value="${dto.finished}"/></td>
-                                </tr>
-                            </c:forEach> -->
+
                             </tbody>
                             <tr></tr>
                         </table>
@@ -127,6 +119,8 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="connect.js"></script>
 <script>
+    let pageRequestDTO = null;
+    let formObj = document.searchForm
     window.addEventListener("load",function(){
         pageStart("http://localhost:8080/api/todo/list")
         // 클래스 명 : pagination 이용해서, 요소를 선택 하고
@@ -147,7 +141,8 @@
             // 현재 페이지의 번호를 가지고 오기.
             //
             const num = target.getAttribute("data-num")
-            let url = "http://localhost:8080/api/todo/list?page="+num+"&size=10"
+            formObj.page.value = num
+            let url = "http://localhost:8080/api/todo/list"+getLink(formObj)
             pageStart(url)
 
             // 해댕 페이지로 이동하기.
@@ -164,11 +159,7 @@
         document.querySelector(".searchBtn").addEventListener("click",function(e){
             e.preventDefault()
             e.stopPropagation()
-            let searchForm = document.searchForm
-            let url = "http://localhost:8080/api/todo/list?page="+1
-            +"&size=10&keyword="+searchForm.keyword.value
-            +"&from="+searchForm.from.value
-            +"&to="+searchForm.to.value
+            let url = "http://localhost:8080/api/todo/list"+getLink(formObj)
             console.log(url)
             pageStart(url)
         },false)
@@ -176,13 +167,18 @@
     function pageStart(url){
         callServer(url).then(responseDTO=>{
             console.log(responseDTO)
+            pageRequestDTO = responseDTO.pageRequestDTO
             let searchForm = document.searchForm
-            // let pageRequestDTO = responseDTO.pageRequestDTO
-            // searchForm.size.value = pageRequestDTO.size
-            // searchForm.finished.value = pageRequestDTO.finished
-            // searchForm.keyword.value = pageRequestDTO.keyword
-            // searchForm.from.value = pageRequestDTO.from
-            // searchForm.to.value = pageRequestDTO.to
+            searchForm.size.value = pageRequestDTO.size
+            searchForm.finished.value = pageRequestDTO.finished
+            searchForm.keyword.value = pageRequestDTO.keyword
+            if(pageRequestDTO.from !== null && pageRequestDTO.to !== null){
+                let date = pageRequestDTO.from[0]+"-"+pageRequestDTO.from[1].toString().padStart(2,"0")+"-"+pageRequestDTO.from[2].toString().padStart(2,"0")
+                searchForm.from.value = date
+                date = pageRequestDTO.to[0]+"-"+pageRequestDTO.to[1].toString().padStart(2,"0")+"-"+pageRequestDTO.to[2].toString().padStart(2,"0")
+                searchForm.to.value = date
+            }
+        
             //list 설정
             let listHTML = '';
             responseDTO.dtoList.forEach(dto => {
