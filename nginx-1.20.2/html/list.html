@@ -48,7 +48,7 @@
                             <input type="hidden" name="page" value="1">
                             <input type="hidden" name="size" value="10">
                             <div class="mb-3">
-                                <input type="checkbox" name="finished" >완료여부
+                                <input type="checkbox" name="completed" >완료여부
                             </div>
                             <div class="mb-3">
                                 <input type="checkbox" name="types" value="t" >제목
@@ -85,7 +85,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Writer</th>
                                 <th scope="col">DueDate</th>
-                                <th scope="col">Finished</th>
+                                <th scope="col">Completed</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -170,7 +170,7 @@
             pageRequestDTO = responseDTO.pageRequestDTO
             let searchForm = document.searchForm
             searchForm.size.value = pageRequestDTO.size
-            searchForm.finished.value = pageRequestDTO.finished
+            searchForm.completed.value = pageRequestDTO.completed
             searchForm.keyword.value = pageRequestDTO.keyword
             if(pageRequestDTO.from !== null && pageRequestDTO.to !== null){
                 let date = pageRequestDTO.from[0]+"-"+pageRequestDTO.from[1].toString().padStart(2,"0")+"-"+pageRequestDTO.from[2].toString().padStart(2,"0")
