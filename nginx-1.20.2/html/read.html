@@ -105,25 +105,32 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="connect.js"></script>
 <script>
+    window.addEventListener("load",function(){
+        let tno = location.search.substr(1)
+        let url = "http://localhost:8080/api/todo/"+tno
+        pageStart(url)
+    })
 const resultDiv = document.querySelector(".result");
 document.querySelector(".btn1").addEventListener("click",(e) =>{
-  e.preventDefault()
-  e.stopPropagation()
-  let tno = document.getElementById("tno").value
-  let url = "http://localhost:8080/api/todo/"+tno
-  console.log(url)
-  callServer(url).then(result=>{
-      console.log(result)
-      document.read.tno.value = result.tno
-      document.read.title.value = result.title
-      document.read.dueDate.value = result.dueDate
-      document.read.writer.value = result.writer
-      document.read.finished.checked = result.complete
-  }).catch(error =>{
-      alert(error)
-  })
-
+    e.preventDefault()
+    e.stopPropagation()
+    let tno = document.getElementById("tno").value
+    let url = "http://localhost:8080/api/todo/"+tno
+    pageStart(url)
 },false)
+function pageStart(url){
+    console.log(url)
+    callServer(url).then(result=>{
+        console.log(result)
+        document.read.tno.value = result.tno
+        document.read.title.value = result.title
+        document.read.dueDate.value = result.dueDate
+        document.read.writer.value = result.writer
+        document.read.finished.checked = result.complete
+    }).catch(error =>{
+        alert(error)
+    })
+}
 </script>
 </body>
 </html>

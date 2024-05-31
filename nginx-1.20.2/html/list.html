@@ -188,7 +188,7 @@
             responseDTO.dtoList.forEach(dto => {
                 listHTML += `<tr>
                                 <th scope="row">${dto.tno}</th>
-                                <td><a href="/todo/read.html?tno=${dto.tno}&" class="text-decoration-none">${dto.title}</a></td>
+                                <td><a href="/read.html?${dto.tno}" class="text-decoration-none">${dto.title}</a></td>
                                 <td>${dto.writer}</td>
                                 <td>${dto.dueDate}</td>
                                 <td>${dto.complete}</td>
