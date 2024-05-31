@@ -20,7 +20,7 @@ public class TodoRepositoryTest {
       Todo todo = Todo.builder()
           .title("Todo..."+i)
           .dueDate(LocalDate.of(2022,(i%12)+1,(i%30)+1))
-          .writer("user"+i)
+          .writer("user"+(i%10))
           .complete(false)
           .build();
       todoRepository.save(todo);

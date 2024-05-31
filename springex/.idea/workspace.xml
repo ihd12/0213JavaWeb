@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/controller/TodoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/domain/Todo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/dto/PageRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/dto/PageResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/dto/TodoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/repository/TodoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/repository/search/TodoSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/repository/search/TodoSearchImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/service/TodoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/service/TodoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api01/src/test/java/org/zerock/api01/repository/TodoRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api01/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/config/CustomSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/config/CustomSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/controller/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/security/filter/TokenCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/security/filter/TokenCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/dto/PageResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/main/java/org/zerock/api01/dto/PageResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api01/src/test/java/org/zerock/api01/repository/TodoRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api01/src/test/java/org/zerock/api01/repository/TodoRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/apiLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/apiLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/read.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/read.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/nginx.pid" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/nginx.pid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,6 +213,7 @@
       <workItem from="1715131493623" duration="1284000" />
       <workItem from="1715647463968" duration="43000" />
       <workItem from="1716962722718" duration="2141000" />
+      <workItem from="1717116532199" duration="5321000" />
     </task>
     <servers />
   </component>

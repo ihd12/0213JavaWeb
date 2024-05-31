@@ -19,6 +19,7 @@ public class PageResponseDTO<E> {
   private boolean prev;
   private boolean next;
 
+  private PageRequestDTO pageRequestDTO;
   private List<E> dtoList;
   @Builder(builderMethodName = "withAll")
   public PageResponseDTO(PageRequestDTO pageRequestDTO, List<E> dtoList, int total){

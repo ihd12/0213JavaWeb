@@ -32,6 +32,7 @@ public class TodoController {
 
   @GetMapping(value="/list", produces= MediaType.APPLICATION_JSON_VALUE)
   public PageResponseDTO<TodoDTO> list(PageRequestDTO pageRequestDTO){
+    System.out.println(pageRequestDTO);
     return todoService.list(pageRequestDTO);
   }
 
