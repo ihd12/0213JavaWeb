@@ -6,9 +6,8 @@
 </head>
 <body>
 <div class="container-fluid">
-    <form name="read" action="/read" method="get">
+    <form name="modifyForm">
     <div class="row">
-        <!-- <%--        <h1>Header</h1>--%> -->
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,10 +60,10 @@
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                                Finished &nbsp;
+                                Complete &nbsp;
                             </label>
                             <input class="form-check-input"
-                                    type="checkbox" name="finished" >
+                                    type="checkbox" name="complete" >
                         </div>
                         <div class="my-4">
                             <div class="float-end">
@@ -103,11 +102,11 @@ function pageStart(url){
     console.log(url)
     callServer(url).then(result=>{
         console.log(result)
-        document.read.tno.value = result.tno
-        document.read.title.value = result.title
-        document.read.dueDate.value = result.dueDate
-        document.read.writer.value = result.writer
-        document.read.finished.checked = result.complete
+        document.modifyForm.tno.value = result.tno
+        document.modifyForm.title.value = result.title
+        document.modifyForm.dueDate.value = result.dueDate
+        document.modifyForm.writer.value = result.writer
+        document.modifyForm.complete.checked = result.complete
     }).catch(error =>{
         alert(error)
     })
@@ -124,8 +123,18 @@ document.querySelector(".btn-danger").addEventListener("click",function(e){
 document.querySelector(".btn-primary").addEventListener("click",function(e){
     e.stopPropagation()
     e.preventDefault()
-    let tno = document.getElementById("tno").value
-    location.href = "/modify.html"+tno
+    let modifyForm = document.modifyForm
+    let formData = {
+        "tno":modifyForm.tno.value,
+        "title":modifyForm.title.value,
+        "dueDate":modifyForm.dueDate.value,
+        "writer":modifyForm.writer.value,
+        "complete":modifyForm.complete.checked
+    }
+    let url = "http://localhost:8080/api/todo/"+modifyForm.tno.value
+    modify(url, formData).then(function(){
+        location.href = "/list.html"
+    })
 },false)
 document.querySelector(".btn-secondary").addEventListener("click",function(e){
     e.stopPropagation()

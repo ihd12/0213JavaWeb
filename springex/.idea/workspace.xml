@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/connect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/modify.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
