@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="825db2de-2b84-4fac-92b6-bf2b7814b5da" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/connect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/html/modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/html/modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../appEC2/src/main/java/org/zerock/appec2/controller/SampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../appEC2/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nginx-1.20.2/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/../nginx-1.20.2/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +211,8 @@
       <workItem from="1715131493623" duration="1284000" />
       <workItem from="1715647463968" duration="43000" />
       <workItem from="1716962722718" duration="2141000" />
-      <workItem from="1717116532199" duration="7578000" />
+      <workItem from="1717116532199" duration="7579000" />
+      <workItem from="1717458485520" duration="1204000" />
     </task>
     <servers />
   </component>
